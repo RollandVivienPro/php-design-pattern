@@ -4,7 +4,7 @@ namespace App\Prototype;
 use App\Prototype\Male;
 use App\Prototype\Female;
 
-require_once('vendor/autoload.php');
+require_once 'vendor/autoload.php';
 
 
 $prenoms = [

@@ -1,7 +1,7 @@
 <?php
 namespace App\Singleton;
 
-require_once('vendor/autoload.php');
+require_once 'vendor/autoload.php';
 
 use App\Singleton\Singleton;
 

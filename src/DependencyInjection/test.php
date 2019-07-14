@@ -1,16 +1,32 @@
 <?php
 
-
-class Test {
+/**
+ * Undocumented class
+ */
+class Test
+{
 
 }
 
-class A {
+/**
+ * Undocumented class
+ */
+class A
+{
 
-    private $test;
+    /**
+     * Undocumented variable
+     *
+     * @var [type]
+     */
+    private $_test;
 
-    public function __construct(){
-        $this->test = new Test(); //////// bad practice
+    /**
+     * Undocumented function
+     */
+    public function __construct()
+    {
+        $this->_test = new Test(); //////// bad practice
 
     }
 
@@ -18,13 +34,26 @@ class A {
 
 $a = new A();
 
+/**
+ * Undocumented class
+ */
 class B
 {
-    private $test;
+    /**
+     * Undocumented variable
+     *
+     * @var [type]
+     */
+    private $_test;
 
+    /**
+     * Undocumented function
+     *
+     * @param Test $test
+     */
     public function __construct(Test $test) //////// good practice
     {
-        $this->test = $test; 
+        $this->_test = $test; 
     }
 }
 

@@ -2,16 +2,28 @@
 
 namespace App\DIC;
 
+/**
+ * Undocumented class
+ */
 class CoBeta
 {
-    private $id;
+    private $_id;
 
+    /**
+     * Undocumented function
+     */
     public function __construct()
     {
-        $this->id = uniqid();
+        $this->_id = uniqid();
     }
 
-    public function getId(){
-        return $this->id;
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function getId()
+    {
+        return $this->_id;
     }
 }

@@ -5,10 +5,11 @@ namespace App\StaticFactory;
 use App\StaticFactory\FormatterInterface;
 
 
-class FormatString implements FormatterInterface 
+class FormatString implements FormatterInterface
 {
 
-    public function getFormat() {
+    public function getFormat()
+    {
         return 'string format';
     }
        

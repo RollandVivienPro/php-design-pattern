@@ -1,30 +1,46 @@
 <?php
+
 namespace App\Singleton;
 
 class Singleton
 {
-  protected static $instance; // the class instance
-  private $id; // just for test, we can remove it
 
-  protected function __construct() // constructor has to be private, the singleton class can't be called as normal
-  {
-    $this->id = uniqid(); // just for test, we can remote it
-  } 
+    /**
+     * @var Singleton
+     */
+    private static $instance; 
 
-  protected function __clone()
-  {
-  } 
+    /**
+     * is not allowed to call from outside to prevent from creating multiple instances,
+     * to use the singleton, you have to obtain the instance from Singleton::getInstance() instead
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * prevent the instance from being cloned (which would create a second instance of it)
+     */
+    private function __clone()
+    {
+    }
+
+    /**
+     * prevent from being unserialized (which would create a second instance of it)
+     */
+    private function __wakeup()
+    {
+    }
   
-  public static function getInstance()
-  {
-      if (!isset(self::$instance)) { 
-        self::$instance = new Singleton(); 
-      }
-      return self::$instance;
-  }
-
-  public function getId(){ // just for test, we can remove it
-    return $this->id;
-  }
+    /**
+     * get the instance
+     */
+    public static function getInstance() : Singleton
+    {
+        if (null === static::$instance) {
+            static::$instance = new static();
+        }
+        return static::$instance;
+    }
 
 }

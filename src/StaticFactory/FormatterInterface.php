@@ -2,7 +2,8 @@
 
 namespace App\StaticFactory;
 
-interface FormatterInterface {
+interface FormatterInterface
+{
 
     public function getFormat();
 
