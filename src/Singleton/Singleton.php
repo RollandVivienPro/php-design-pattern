@@ -3,27 +3,28 @@ namespace App\Singleton;
 
 class Singleton
 {
-  protected static $instance; // Contiendra l'instance de notre classe.
-  private $id;
+  protected static $instance; // the class instance
+  private $id; // just for test, we can remove it
 
-  protected function __construct()
+  protected function __construct() // constructor has to be private, the singleton class can't be called as normal
   {
-    $this->id = uniqid();
-  } // Constructeur en privé.
+    $this->id = uniqid(); // just for test, we can remote it
+  } 
+
   protected function __clone()
   {
-  } // Méthode de clonage en privé aussi.
+  } 
   
   public static function getInstance()
   {
-      if (!isset(self::$instance)) { // Si on n'a pas encore instancié notre classe.
-        self::$instance = new Singleton(); // On s'instancie nous-mêmes. :)
+      if (!isset(self::$instance)) { 
+        self::$instance = new Singleton(); 
       }
-    
       return self::$instance;
   }
 
-  public function getId(){
+  public function getId(){ // just for test, we can remove it
     return $this->id;
   }
+
 }
